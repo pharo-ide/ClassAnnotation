@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ObjectusReusableObject2",
+	"category" : "ObjectUse-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ObjectusSubclass3",
+	"type" : "normal"
+}

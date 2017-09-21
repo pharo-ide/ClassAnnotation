@@ -1,0 +1,14 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ObjectUse",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"AllDeclaredInstances",
+		"DeclarationPragmaCollector"
+	],
+	"instvars" : [ ],
+	"name" : "ObjectUse",
+	"type" : "normal"
+}

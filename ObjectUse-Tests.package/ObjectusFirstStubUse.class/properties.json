@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ObjectUse",
+	"category" : "ObjectUse-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ObjectusFirstStubUse",
+	"type" : "normal"
+}
