@@ -1,11 +1,11 @@
-I represent first class meta annotation which can be attached to classes using class side method with pragma #classMetaAnnotation. 
+I represent first class meta annotation which can be attached to classes using class side methods with the pragma #classMetaAnnotation. 
 For example:
 	MyClass class>>specialAnnotationExample
 		<classMetaAnnotation>
 		^MySpecialAnnotation new
-The declaration method should return instance of annotation.
+The declaration method should return an instance of the annotation.
 
-I provide query API to retrieve all declared instances of concrete annotation class:
+I provide a query API to retrieve all declared instances of a concrete annotation class:
 	MySpecialAnnotation declaredInstances
 	MySpecialAnnotation declaredInstancesFor: MyClass
 	MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
