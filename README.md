@@ -1,14 +1,20 @@
 # ClassMetaAnnotation
-This package implements first class meta annotations which can be attached to classes using class side methods with the pragma #classMetaAnnotation. 
+This package provides the way how implement first class meta annotations and how to attach them to classes.
 
-For example:
+To create new annotation just subclass ClassMetaAnnotation:
+```Smalltalk
+ClassMetaAnnotation subclass: #MySpecialAnnotation
+	instanceVariableNames: ''
+	classVariableNames: ''
+	package: 'MyPackage'
+```
+Then add new method to the class which you want annotate. It should be class side method and it should return the instance of annotation class. In addition the method should be marked with pragma #classMetaAnnotation:
 ```Smalltalk
 MyClass class>>specialAnnotationExample
 	<classMetaAnnotation>
 	
 	^MySpecialAnnotation new
 ```
-The declaration method should return an instance of the annotation.
 
 ## Annotation queries
 There are two type of queries.
