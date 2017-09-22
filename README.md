@@ -12,16 +12,16 @@ The declaration method should return an instance of the annotation.
 
 There is set of messages to query declared instances of concrete annotation class:
 ```Smalltalk
-	MySpecialAnnotation declaredInstances
-	MySpecialAnnotation declaredInstancesFor: MyClass
-	MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
+MySpecialAnnotation declaredInstances
+MySpecialAnnotation declaredInstancesFor: MyClass
+MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
 ```
 All annotations are cached in the Registry class variable. It is cheap to query them.
 
 Also there is set of messages to query all attached annotation from given class:
 ```Smalltalk
-	MyClass metaAnnotations
-	MyClass metaAnnotationsDo: [:each | each logCr]
+MyClass metaAnnotations
+MyClass metaAnnotationsDo: [:each | each logCr]
 ```
 Because annotations are declared in the methods it provides interesting feature to extend meta information by external packages.
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
