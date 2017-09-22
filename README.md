@@ -21,7 +21,7 @@ MySpecialAnnotation declaredInstances
 MySpecialAnnotation declaredInstancesFor: MyClass
 MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
 ```
-Each annotation includes the annotated class and selected of declaration method.
+Each annotation includes the annotated class and selector of declaration method.
 
 And you can query a class for all attached annotations:
 ```Smalltalk
