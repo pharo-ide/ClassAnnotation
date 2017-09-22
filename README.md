@@ -42,7 +42,7 @@ Just define declaration method as class extension. And when your package will be
 ## Annotation instantiation
 There is no special way how instantiate annotation instances. It is up to your domain.
 
-The base internal state of annotation is initialized during Registry creation.  Users should not think about it. 
+The base internal state of annotation is initialized during registry creation.  Users should not think about it. 
 
 You can add any domain specific variables to your annotations and add constructors to initialize them in declaration methods. 
 
