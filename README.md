@@ -48,3 +48,11 @@ You can add any domain specific variables to your annotations and add constructo
 
 # Annotating Annotations
 Annotations are just normal objects without any restrictions. You can also attatch annotations to annotations like in other languages
+
+# Installation
+```Smalltalk
+Metacello new
+  baseline: 'TelePharo';
+  repository: 'github://dionisiydk/ClassMetaAnnotation';
+  load
+```
