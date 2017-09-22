@@ -21,13 +21,13 @@ MySpecialAnnotation declaredInstances
 MySpecialAnnotation declaredInstancesFor: MyClass
 MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
 ```
-Each annotation includes the annotated class and selector of declaration method.
-
 And you can query a class for all attached annotations:
 ```Smalltalk
 MyClass metaAnnotations
 MyClass metaAnnotationsDo: [:each | each logCr]
 ```
+Notice that each annotation includes the annotated class and the selector of declaration method. By queries annotation you are also retrieve related classes which is very suitable for implementation of various kind of system pluggability.
+
 ## Extending classes with meta information from external packages
 Because annotations are declared in the methods it provides interesting feature to extend meta information by external packages.
 
