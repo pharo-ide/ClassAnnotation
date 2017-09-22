@@ -1,4 +1,5 @@
-I represent first class meta annotation which can be attached to classes using class side methods with the pragma #classMetaAnnotation. 
+I am the root class annotations hierarchy.
+My subclasses should annotate classes using class side methods with the pragma #classMetaAnnotation. 
 For example:
 	MyClass class>>specialAnnotationExample
 		<classMetaAnnotation>
@@ -9,9 +10,10 @@ I provide a query API to retrieve all declared instances of a concrete annotatio
 	MySpecialAnnotation declaredInstances
 	MySpecialAnnotation declaredInstancesFor: MyClass
 	MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
+Each annotation includes the annotated classe and the selector of declaration method.
 All annotations are cached in my Registry class var. It is cheap to query them.
 
-I extend Class with new methods to retrieve all attached annotations:
+Classes itself can be queried for all attached annotations:
 	MyClass metaAnnotations
 	MyClass metaAnnotationsDo: [:each | each logCr]
 
