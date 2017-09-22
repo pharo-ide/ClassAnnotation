@@ -11,8 +11,6 @@ MyClass class>>specialAnnotationExample
 The declaration method should return an instance of the annotation.
 
 ## Annotation queries
-All annotations are cached in the special registry. It is cheap to query them.
-
 There are two type of queries.
 
 You can query all declared instances of concrete annotation class:
@@ -26,7 +24,9 @@ And you can query a class for all attached annotations:
 MyClass metaAnnotations
 MyClass metaAnnotationsDo: [:each | each logCr]
 ```
-Notice that each annotation includes the annotated class and the selector of declaration method. By queries annotation you are also retrieve related classes which is very suitable for implementation of various kind of system pluggability.
+Notice that each annotation includes the annotated class and the selector of declaration method. 
+
+All annotations are cached in the special registry. It is cheap to query them.
 
 ## Extending classes with meta information from external packages
 Because annotations are declared in the methods it provides interesting feature to extend meta information by external packages.
