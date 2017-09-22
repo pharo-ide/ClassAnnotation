@@ -1,5 +1,5 @@
 # ClassMetaAnnotation
-This package implements first class meta annotation which can be attached to classes using class side methods with the pragma #classMetaAnnotation. 
+This package implements first class meta annotations which can be attached to classes using class side methods with the pragma #classMetaAnnotation. 
 
 For example:
 ```Smalltalk
