@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ClassWithSingleMetaAnnotation",
+	"category" : "ClassMetaAnnotation-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SubclassWithOverridenMetaAnnotation",
+	"type" : "normal"
+}

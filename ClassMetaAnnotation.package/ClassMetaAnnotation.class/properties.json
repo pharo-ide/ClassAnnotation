@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ClassMetaAnnotation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"DeclarationPragmaCollector",
+		"Registry"
+	],
+	"instvars" : [
+		"annotatedClass",
+		"declarationSelector"
+	],
+	"name" : "ClassMetaAnnotation",
+	"type" : "normal"
+}

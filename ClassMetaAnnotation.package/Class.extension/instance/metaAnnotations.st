@@ -1,0 +1,3 @@
+*ClassMetaAnnotation
+metaAnnotations
+	^ClassMetaAnnotation findAllAnnotationsFor: self
