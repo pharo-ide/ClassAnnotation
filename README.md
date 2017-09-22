@@ -34,7 +34,7 @@ Because annotations are declared in methods it provides interesting feature to e
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
 
 ## Annotation instantiation
-There is no special way how instantiate annotation instances. It is up to the domain.
+There is no special way how instantiate annotation instances. It is up to your domain.
 
 The base internal state of annotation is initialized during Registry creation.  Users should not think about it. 
 
