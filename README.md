@@ -10,22 +10,30 @@ MyClass class>>specialAnnotationExample
 ```
 The declaration method should return an instance of the annotation.
 
-There is set of messages to query declared instances of concrete annotation class:
+## Annotation queries
+All annotations are cached in the special registry. It is cheap to query them.
+
+There are two type of queries.
+
+You can query all declared instances of concrete annotation class:
 ```Smalltalk
 MySpecialAnnotation declaredInstances
 MySpecialAnnotation declaredInstancesFor: MyClass
 MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
 ```
-All annotations are cached in the Registry class variable. It is cheap to query them.
+Each annotation includes the annotated class and selected of declaration method.
 
-There is set of messages to query all annotations attached to given class:
+And you can query a class for all attached annotations:
 ```Smalltalk
 MyClass metaAnnotations
 MyClass metaAnnotationsDo: [:each | each logCr]
 ```
+## Extending classes with meta information from external packages
 Because annotations are declared in the methods it provides interesting feature to extend meta information by external packages.
+
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
- 
+
+## Annotation instantiation
 There is no special way how instantiate annotation instances. It is up to the domain.
 
 The base internal state of annotation is initialized during Registry creation.  Users should not think about it. 
