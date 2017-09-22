@@ -18,7 +18,7 @@ MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
 ```
 All annotations are cached in the Registry class variable. It is cheap to query them.
 
-There is set of messages to query all attached annotation from given class:
+There is set of messages to query all annotations attached to given class:
 ```Smalltalk
 MyClass metaAnnotations
 MyClass metaAnnotationsDo: [:each | each logCr]
