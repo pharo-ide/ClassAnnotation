@@ -40,4 +40,5 @@ The base internal state of annotation is initialized during Registry creation.  
 
 You can add any domain specific variables to your annotations and add constructors to initialize them in declaration methods. 
 
+# Annotating Annotations
 Annotations are just normal objects without any restrictions. You can also attatch annotations to annotations like in other languages
