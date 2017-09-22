@@ -15,7 +15,7 @@ I extend Class with new methods to retrieve all attached annotations:
 	MyClass metaAnnotations
 	MyClass metaAnnotationsDo: [:each | each logCr]
 
-Because annotations are declared in the methods it provides interesting feature to extends meta information from external packages.
+Because annotations are declared in the methods it provides interesting feature to extend meta information from external packages.
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
  
 There is no special way how instantiate annotation instances. It is up to your domain.
