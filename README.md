@@ -4,8 +4,9 @@ This package implements first class meta annotations which can be attached to cl
 For example:
 ```Smalltalk
 MyClass class>>specialAnnotationExample
-		<classMetaAnnotation>
-		^MySpecialAnnotation new
+	<classMetaAnnotation>
+	
+	^MySpecialAnnotation new
 ```
 The declaration method should return an instance of the annotation.
 
