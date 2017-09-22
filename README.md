@@ -52,7 +52,7 @@ Annotations are just normal classes without any restrictions. You can also attat
 # Installation
 ```Smalltalk
 Metacello new
-  baseline: 'TelePharo';
+  baseline: 'ClassMetaAnnotation';
   repository: 'github://dionisiydk/ClassMetaAnnotation';
   load
 ```
