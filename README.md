@@ -32,7 +32,7 @@ MyClass metaAnnotationsDo: [:each | each logCr]
 ```
 Notice that each annotation includes the annotated class and the selector of declaration method. 
 
-All annotations are cached in the special registry. It is cheap to query them.
+All annotations are cached in special registry. It is cheap to query them.
 
 ## Extending classes with meta information
 Because annotations are declared in methods it provides interesting feature to extend meta information by external packages.
