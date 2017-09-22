@@ -29,7 +29,7 @@ Notice that each annotation includes the annotated class and the selector of dec
 All annotations are cached in the special registry. It is cheap to query them.
 
 ## Extending classes with meta information
-Because annotations are declared in the methods it provides interesting feature to extend meta information by external packages.
+Because annotations are declared in methods it provides interesting feature to extend meta information by external packages.
 
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
 
