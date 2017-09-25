@@ -17,15 +17,15 @@ MyClass class>>specialAnnotationExample
 ```
 
 ## Annotation queries
-There are two type of queries.
+There are two ways how to query annotations:
 
-You can query all declared instances of concrete annotation class:
+1) You can ask concrete annotation class for all declared instances:
 ```Smalltalk
 MySpecialAnnotation declaredInstances
 MySpecialAnnotation declaredInstancesFor: MyClass
 MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
 ```
-And you can query a class for all attached annotations:
+2) And you can ask given class for all attached annotations:
 ```Smalltalk
 MyClass metaAnnotations
 MyClass metaAnnotationsDo: [:each | each logCr]
