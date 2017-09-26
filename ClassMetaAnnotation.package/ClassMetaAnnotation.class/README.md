@@ -10,7 +10,7 @@ I provide a query API to retrieve all declared instances of a concrete annotatio
 	MySpecialAnnotation declaredInstances
 	MySpecialAnnotation declaredInstancesFor: MyClass
 	MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
-Each annotation includes the annotated classe and the selector of declaration method.
+Each annotation includes the annotated class and the selector of declaration method.
 All annotations are cached in my Registry class var. It is cheap to query them.
 
 Classes itself can be queried for all attached annotations:
