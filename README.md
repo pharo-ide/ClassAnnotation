@@ -8,7 +8,7 @@ ClassMetaAnnotation subclass: #MySpecialAnnotation
 	classVariableNames: ''
 	package: 'MyPackage'
 ```
-Then add new class side method to the class which you want annotate. It should return the instance of annotation. And the method should be marked with pragma #classMetaAnnotation:
+Then add new class side method to the class which you want annotate. It should return an instance of the annotation. And the method should be marked with pragma #classMetaAnnotation:
 ```Smalltalk
 MyClass class>>specialAnnotationExample
 	<classMetaAnnotation>
