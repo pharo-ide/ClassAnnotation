@@ -1,4 +1,4 @@
 accessing
 declaredInstances
 
-	^self registry at: self
+	^self registry at: self ifAbsent: #()
