@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "DenisKudryashov 9/27/2017 18:31",
+	"super" : "ClassMetaAnnotation",
+	"category" : "ClassAnnotation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"errorString"
+	],
+	"name" : "BrokenClassMetaAnnotation",
+	"type" : "normal"
+}

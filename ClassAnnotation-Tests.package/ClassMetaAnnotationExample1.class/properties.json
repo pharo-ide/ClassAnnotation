@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ClassMetaAnnotation",
+	"category" : "ClassAnnotation-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ClassMetaAnnotationExample1",
+	"type" : "normal"
+}
