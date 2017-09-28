@@ -3,6 +3,6 @@ testDeclaredInstancesEnumeration
 
 	| enumerated |
 	enumerated := OrderedCollection new.
-	ClassAnnotationExample1 declaredInstancesDo: [:each | enumerated add: each].
+	ClassAnnotationExample1 registeredInstancesDo: [:each | enumerated add: each].
 	
-	self assert: enumerated asArray equals: ClassAnnotationExample1 declaredInstances asArray
+	self assert: enumerated asArray equals: ClassAnnotationExample1 registeredInstances asArray
