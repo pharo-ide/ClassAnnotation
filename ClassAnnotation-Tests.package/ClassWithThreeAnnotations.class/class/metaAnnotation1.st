@@ -1,5 +1,5 @@
 usage
 metaAnnotation1
-	<classMetaAnnotation>
+	<classAnnotation>
 	
 	^ClassAnnotationExample1 new

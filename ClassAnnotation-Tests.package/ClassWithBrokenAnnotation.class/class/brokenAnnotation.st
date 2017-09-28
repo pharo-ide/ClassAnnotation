@@ -1,5 +1,5 @@
 annotations
 brokenAnnotation
-	<classMetaAnnotation>
+	<classAnnotation>
 	
 	self error: self brokenAnnotationMessage
