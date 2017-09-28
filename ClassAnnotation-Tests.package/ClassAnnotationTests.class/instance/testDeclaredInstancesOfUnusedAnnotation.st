@@ -2,6 +2,6 @@ tests
 testDeclaredInstancesOfUnusedAnnotation
 
 	| actual |
-	actual := ClassAnnotationUnusedExample declaredInstances.
+	actual := ClassAnnotationUnusedExample registeredInstances.
 	
 	self assert: actual isEmpty

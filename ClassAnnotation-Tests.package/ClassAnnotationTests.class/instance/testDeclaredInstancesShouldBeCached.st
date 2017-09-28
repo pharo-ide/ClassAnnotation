@@ -2,6 +2,6 @@ tests
 testDeclaredInstancesShouldBeCached
 
 	| annotations |
-	annotations := ClassAnnotationExample1 declaredInstances.
+	annotations := ClassAnnotationExample1 registeredInstances.
 	
-	self assert: ClassAnnotationExample1 declaredInstances == annotations
+	self assert: ClassAnnotationExample1 registeredInstances == annotations

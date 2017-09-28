@@ -7,9 +7,9 @@ For example:
 The declaration method should return an instance of the annotation.
 
 I provide a query API to retrieve all declared instances of a concrete annotation class:
-	MySpecialAnnotation declaredInstances
-	MySpecialAnnotation declaredInstancesFor: MyClass
-	MySpecialAnnotation declaredInstancesDo: [:each | each logCr].
+	MySpecialAnnotation registeredInstances
+	MySpecialAnnotation registeredInstancesAnnotating: MyClass
+	MySpecialAnnotation registeredInstancesDo: [:each | each logCr].
 Each annotation includes the annotated class and the selector of declaration method.
 All annotations are cached in my Registry class var. It is cheap to query them.
 
