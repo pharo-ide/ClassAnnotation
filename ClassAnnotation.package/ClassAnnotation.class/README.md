@@ -1,8 +1,8 @@
 I am the root class annotations hierarchy.
-My subclasses should annotate classes using class side methods with the pragma #classMetaAnnotation. 
+My subclasses should annotate classes using class side methods with the pragma #classAnnotation. 
 For example:
 	MyClass class>>specialAnnotationExample
-		<classMetaAnnotation>
+		<classAnnotation>
 		^MySpecialAnnotation new
 The declaration method should return an instance of the annotation.
 
