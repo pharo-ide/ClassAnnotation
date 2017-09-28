@@ -1,17 +1,17 @@
-# ClassMetaAnnotation
-This package provides the way how implement first class meta annotations and how to attach them to classes.
+# ClassAnnotation
+This package provides the way how implement first class annotations and how to attach them to classes.
 
-To create new annotation just subclass ClassMetaAnnotation:
+To create new annotation just subclass ClassAnnotation:
 ```Smalltalk
-ClassMetaAnnotation subclass: #MySpecialAnnotation
+ClassAnnotation subclass: #MySpecialAnnotation
 	instanceVariableNames: ''
 	classVariableNames: ''
 	package: 'MyPackage'
 ```
-Then add new class side method to the class which you want annotate. It should return an instance of the annotation. And the method should be marked with pragma #classMetaAnnotation:
+Then add new class side method to the class which you want annotate. It should return an instance of the annotation. And the method should be marked with pragma #classAnnotation:
 ```Smalltalk
 MyClass class>>specialAnnotationExample
-	<classMetaAnnotation>
+	<classAnnotation>
 	
 	^MySpecialAnnotation new
 ```
@@ -52,7 +52,7 @@ Annotations are just normal classes without any restrictions. You can also attat
 # Installation
 ```Smalltalk
 Metacello new
-  baseline: 'ClassMetaAnnotation';
-  repository: 'github://dionisiydk/ClassMetaAnnotation';
+  baseline: 'ClassAnnotation';
+  repository: 'github://dionisiydk/ClassAnnotation';
   load
 ```
