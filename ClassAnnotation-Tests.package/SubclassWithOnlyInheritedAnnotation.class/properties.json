@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ClassWithSingleAnnotation",
+	"category" : "ClassAnnotation-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "SubclassWithOnlyInheritedAnnotation",
+	"type" : "normal"
+}

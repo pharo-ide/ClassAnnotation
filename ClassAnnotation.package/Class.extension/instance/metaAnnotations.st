@@ -1,3 +1,3 @@
 *ClassAnnotation
 metaAnnotations
-	^ClassMetaAnnotation findAllAnnotationsFor: self
+	^ClassAnnotation findAllAnnotationsFor: self
