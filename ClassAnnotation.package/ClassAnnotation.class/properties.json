@@ -1,0 +1,17 @@
+{
+	"commentStamp" : "DenisKudryashov 9/26/2017 10:28",
+	"super" : "Object",
+	"category" : "ClassAnnotation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [
+		"DeclarationPragmaCollector",
+		"Registry"
+	],
+	"instvars" : [
+		"annotatedClass",
+		"declarationSelector"
+	],
+	"name" : "ClassAnnotation",
+	"type" : "normal"
+}
