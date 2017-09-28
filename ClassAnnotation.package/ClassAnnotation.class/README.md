@@ -6,7 +6,7 @@ For example:
 		^MySpecialAnnotation new
 The declaration method should return an instance of the annotation.
 
-I provide a query API to retrieve all declared instances of a concrete annotation class:
+I provide a query API to retrieve all registered instances of a concrete annotation class:
 	MySpecialAnnotation registeredInstances
 	MySpecialAnnotation registeredInstancesAnnotating: MyClass
 	MySpecialAnnotation registeredInstancesDo: [:each | each logCr].
