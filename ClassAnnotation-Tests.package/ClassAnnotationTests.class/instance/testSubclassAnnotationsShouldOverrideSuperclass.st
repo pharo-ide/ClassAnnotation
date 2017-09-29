@@ -2,7 +2,7 @@ tests
 testSubclassAnnotationsShouldOverrideSuperclass
 
 	| annotations |
-	annotations := SubclassWithOverridenAnnotation metaAnnotations.
+	annotations := SubclassWithOverridenAnnotation classAnnotations.
 	
 	self assert: annotations size equals: 1.
 	self assert: annotations first annotatedClass equals: SubclassWithOverridenAnnotation.

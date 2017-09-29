@@ -2,7 +2,7 @@ tests
 testGettingAnnotationsOfGivenClass
 
 	| annotations |
-	annotations := ClassWithThreeAnnotations metaAnnotations.
+	annotations := ClassWithThreeAnnotations classAnnotations.
 	
 	self assert: annotations size equals: 3.
 	annotations do: [ :each | 

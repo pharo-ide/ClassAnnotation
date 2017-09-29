@@ -2,7 +2,7 @@ tests
 testDebuggingBrokenClassAnnotation
 
 	| annotations ann |
-	annotations := ClassWithBrokenAnnotation metaAnnotations.	
+	annotations := ClassWithBrokenAnnotation classAnnotations.	
 	self assert: annotations size equals: 1.
 	
 	ann := annotations anyOne.
