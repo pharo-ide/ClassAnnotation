@@ -1,3 +1,3 @@
 *ClassAnnotation
-metaAnnotationsDo: aBlock
+classAnnotationsDo: aBlock
 	^ClassAnnotation findAllAnnotationsFor: self andDo: aBlock

@@ -3,6 +3,6 @@ testEnumeratingAnnotationsOfGivenClass
 
 	| enumerated |
 	enumerated := OrderedCollection new.
-	ClassWithThreeAnnotations metaAnnotationsDo: [:each | enumerated add: each].
+	ClassWithThreeAnnotations classAnnotationsDo: [:each | enumerated add: each].
 	
-	self assert: enumerated asArray equals: ClassWithThreeAnnotations metaAnnotations asArray
+	self assert: enumerated asArray equals: ClassWithThreeAnnotations classAnnotations asArray

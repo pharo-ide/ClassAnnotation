@@ -2,6 +2,6 @@ tests
 testGettingAnnotationsOfClassWithoutAnnotations
 
 	| annotations |
-	annotations := ClassWithoutAnnotations metaAnnotations.
+	annotations := ClassWithoutAnnotations classAnnotations.
 	
 	self assert: annotations isEmpty
