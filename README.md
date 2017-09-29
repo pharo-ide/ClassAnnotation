@@ -27,8 +27,8 @@ MySpecialAnnotation registeredInstancesDo: [:each | each logCr].
 ```
 2) And you can ask given class for all attached annotations:
 ```Smalltalk
-MyClass metaAnnotations
-MyClass metaAnnotationsDo: [:each | each logCr]
+MyClass classAnnotations
+MyClass classAnnotationsDo: [:each | each logCr]
 ```
 Notice that each annotation includes the annotated class and the selector of declaration method. 
 
