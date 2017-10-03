@@ -1,0 +1,3 @@
+*ClassAnnotation
+asAnnotationContext
+	^SimpleAnnotationContext expectedContextClass: self

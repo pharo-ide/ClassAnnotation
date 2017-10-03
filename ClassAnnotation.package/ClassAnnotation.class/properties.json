@@ -10,7 +10,8 @@
 	],
 	"instvars" : [
 		"annotatedClass",
-		"declarationSelector"
+		"declarationSelector",
+		"context"
 	],
 	"name" : "ClassAnnotation",
 	"type" : "normal"

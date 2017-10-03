@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "",
+	"super" : "AnnotationContext",
+	"category" : "ClassAnnotation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"expectedContextClass"
+	],
+	"name" : "SimpleAnnotationContext",
+	"type" : "normal"
+}
