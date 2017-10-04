@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ClassAnnotationTestCase",
+	"category" : "ClassAnnotation-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "VisibleClassAnnotationsTests",
+	"type" : "normal"
+}

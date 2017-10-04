@@ -11,7 +11,7 @@
 	"instvars" : [
 		"annotatedClass",
 		"declarationSelector",
-		"context"
+		"activeContext"
 	],
 	"name" : "ClassAnnotation",
 	"type" : "normal"
