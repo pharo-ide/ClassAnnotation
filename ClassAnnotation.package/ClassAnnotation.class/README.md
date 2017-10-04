@@ -14,8 +14,8 @@ Each annotation includes the annotated class and the selector of declaration met
 All annotations are cached in my Registry class var. It is cheap to query them.
 
 Classes itself can be queried for all attached annotations:
-	MyClass metaAnnotations
-	MyClass metaAnnotationsDo: [:each | each logCr]
+	MyClass classAnnotations
+	MyClass classAnnotationsDo: [:each | each logCr]
 
 Because annotations are declared in the methods it provides interesting feature to extend meta information from external packages.
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
@@ -28,3 +28,4 @@ Annotations are just normal objects without any restrictions. You can also attat
     Instance Variables
 	annotatedClass:		<Class>
 	declarationSelector:		<Symbol>
+	activeContext:		<AnnotationContext>
