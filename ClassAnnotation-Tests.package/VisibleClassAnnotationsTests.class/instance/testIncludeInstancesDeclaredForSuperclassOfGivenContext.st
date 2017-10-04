@@ -6,5 +6,5 @@ testIncludeInstancesDeclaredForSuperclassOfGivenContext
 	annotations := ContextualClassAnnotationExample2 visibleInstancesInContext: context.
 	
 	self assert: annotations size equals: 1.
-	declaredContext := annotations anyOne activeContext expectedContextClass.
+	declaredContext := annotations anyOne activeContext userContextClass.
 	self assert: declaredContext equals: BaseAnnotationUserContextExample

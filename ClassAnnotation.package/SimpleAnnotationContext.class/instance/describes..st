@@ -1,4 +1,4 @@
 testing
 describes: aContext
 
-	^aContext isKindOf: expectedContextClass
+	^aContext isKindOf: userContextClass
