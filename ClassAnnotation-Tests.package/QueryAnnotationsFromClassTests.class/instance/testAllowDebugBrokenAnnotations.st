@@ -2,7 +2,7 @@ tests
 testAllowDebugBrokenAnnotations
 
 	| annotations ann |
-	annotations := ClassWithBrokenAnnotation classAnnotations.	
+	annotations := ClassWithBrokenAnnotatingMethod classAnnotations.	
 	self assert: annotations size equals: 1.
 	
 	ann := annotations anyOne.
@@ -11,4 +11,4 @@ testAllowDebugBrokenAnnotations
 	[ann debug.
 	self assert: false description: 'should fail'] 
 		on: Error do: [ :err | 
-	self assert: err messageText equals: ClassWithBrokenAnnotation brokenAnnotationMessage  ]
+	self assert: err messageText equals: ClassWithBrokenAnnotatingMethod brokenAnnotationMessage  ]

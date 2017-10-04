@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "ClassWithBrokenAnnotation",
+	"name" : "ClassWithBadAnnotatingMethod",
 	"type" : "normal"
 }
