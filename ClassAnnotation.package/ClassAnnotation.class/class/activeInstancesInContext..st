@@ -1,4 +1,4 @@
-accessing
+queries-contextual
 activeInstancesInContext: aContext
 	"it will return all my registered instances which should be active in given context"
 	

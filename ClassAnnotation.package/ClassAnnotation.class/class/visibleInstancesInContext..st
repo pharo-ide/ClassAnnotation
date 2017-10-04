@@ -1,4 +1,4 @@
-accessing
+queries-contextual
 visibleInstancesInContext: aContext
 	"it will return all my registered instances which should be visible in given context"
 	

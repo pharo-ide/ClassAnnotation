@@ -1,4 +1,4 @@
-accessing
+queries-contextual
 visibleInstancesFor: aClass inContext: aContext do: aBlock
 	"it will enumerate all my registered instances visible in given aContext 
 	which are annotating given aClass"

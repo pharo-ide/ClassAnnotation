@@ -1,4 +1,4 @@
-accessing
+queries-general
 findAllAnnotationsFor: aClass 
 	"It will lookup all kind of annotations which annotate given class"
 	| result |
