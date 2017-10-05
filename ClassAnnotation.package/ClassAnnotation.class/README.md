@@ -35,7 +35,7 @@ I provide query interface to retrieve registered annotations which are active in
 	MySpecialAnnotation activeInstancesInContext: anUserContext
 	MySpecialAnnotation activeInstancesInContext: anUserContext do: [:ann | ]
 	MySpecialAnnotation activeInstancesFor: MyClass inContext: anUserContext do: [:ann | ]
-By default the annotation is active in given context if it is described by declared context:
+By default the annotation is active if given context is described by declared context:
 	ClassAnnotation>>isActiveInContext: aContext
 		^activeContext describes: aContext
 Subclasses can provide extra conditions for active annotations. In that case they override this method:
@@ -52,7 +52,7 @@ So the visible annotation is not necessary active. But active annotation is alwa
 	ClassAnnotation>>isActiveInContext: aContext
 		^self isVisibleInContext: aContext
 (I showed another version above to simplify description).
-I provide extra query methods to retrieve visible annotations:
+There are extra query methods to retrieve visible annotations:
 	MySpecialAnnotation visibleInstancesInContext: anUserContext
 	MySpecialAnnotation visibleInstancesInContext: anUserContext do: [:ann | ]
 	MySpecialAnnotation visibleInstancesFor: MyClass inContext: anUserContext do: [:ann | ]
