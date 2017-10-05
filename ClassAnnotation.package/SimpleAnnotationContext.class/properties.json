@@ -1,0 +1,13 @@
+{
+	"commentStamp" : "DenisKudryashov 10/5/2017 10:38",
+	"super" : "AnnotationContext",
+	"category" : "ClassAnnotation",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"userContextClass"
+	],
+	"name" : "SimpleAnnotationContext",
+	"type" : "normal"
+}
