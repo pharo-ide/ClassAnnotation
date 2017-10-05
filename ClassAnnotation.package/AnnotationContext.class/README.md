@@ -3,9 +3,6 @@ They should implement single method #describes: with context as argument. Contex
 
 By default annotations has NullAnnotationContext which not describes any possible context. So when you query annotations in given context then annotations without specified contexts will be skipped.
 
-For simplicity there is on simple context implementation SimpleAnnotationContext which is defined by class. And it represent any context, a kind of given class.
-
-It can be created directly from class using convertation method:
-	MyContext asAnnotationContext.
-So you can create annotations using class of context:
+For simplicity there is one simple context implementation the SimpleAnnotationContext which represents the hierarchy of given context class. It is hidden from users and created when class is specified for annotation context:
 	MyClassAnnotation for: MyContext
+Look at subclasse comments for details
