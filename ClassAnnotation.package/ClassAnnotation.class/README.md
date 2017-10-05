@@ -17,6 +17,12 @@ Classes itself can be queried for all attached annotations:
 	MyClass classAnnotations
 	MyClass classAnnotationsDo: [:each | each logCr]
 
+I provide extra hook to forbid annotating of particular classes. For example my subclasses can define that abstract classses should not be annotated by them.
+The rule should be  implemented in the method:
+	MySpecialAnnotation >>isForbidden
+		^annotatedClass isAbstract 
+By default method returns true which means that annotation can annotate any class.
+
 Because annotations are declared in the methods it provides interesting feature to extend meta information from external packages.
 Just define declaration method as class extension. And when your package will be loaded the new annotation will be added into existing class.
  
@@ -42,7 +48,7 @@ Subclasses can provide extra conditions for active annotations. In that case the
 	MySpecialAnnotation>>isActiveInContext: aContext
 		^(super isActiveInContext: aContext)
 			and: [annotatingClass canBeUsedInContext: aContext]
-So the logic can depends on annotating class itself and given actual context of annotation user.
+So the logic can depends on annotating class itself and actual context given from annotation user.
 
 For some scenarios you may need to query annotations according to original "active" definition despite of extra conditions.
 For such cases I introduced  the "visibility" of annotations: the annotation is visible if it is declared for given context:

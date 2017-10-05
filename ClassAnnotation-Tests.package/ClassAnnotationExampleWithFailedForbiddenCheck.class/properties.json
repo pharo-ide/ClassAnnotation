@@ -1,0 +1,11 @@
+{
+	"commentStamp" : "",
+	"super" : "ClassAnnotation",
+	"category" : "ClassAnnotation-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "ClassAnnotationExampleWithFailedForbiddenCheck",
+	"type" : "normal"
+}
