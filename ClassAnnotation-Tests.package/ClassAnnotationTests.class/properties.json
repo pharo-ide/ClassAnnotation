@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "ClassAnnotationsTests",
+	"name" : "ClassAnnotationTests",
 	"type" : "normal"
 }

@@ -1,5 +1,5 @@
 {
-	"commentStamp" : "DenisKudryashov 10/5/2017 13:37",
+	"commentStamp" : "DenisKudryashov 10/6/2017 11:41",
 	"super" : "Object",
 	"category" : "ClassAnnotation",
 	"classinstvars" : [ ],
@@ -11,6 +11,7 @@
 	"instvars" : [
 		"annotatedClass",
 		"declarationSelector",
+		"priority",
 		"activeContext"
 	],
 	"name" : "ClassAnnotation",
