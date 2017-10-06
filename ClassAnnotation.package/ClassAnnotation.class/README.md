@@ -31,6 +31,13 @@ The internal state is initialized during Registry creation.  Users should not th
 You can add any domain specific variables to your annotations and add constructors to initialize them in declaration methods. 
 Annotations are just normal objects without any restrictions. You can also attatch annotations to annotations like in other languages.
 
+-----------Advanced features. Priority------------
+
+Annotations in the registry are sorted by priority. It provides out of the box mechanizm for ordering annotated classes for the user domain purposes. 
+Just pass priority number into the annotation when you create it in declaration method. And define suitable constructor for this.
+
+-----------Advanced features. Context------------
+
 Any annotation can be contextual. You can specify instance of context where annotation can be used:
 	MySpecialAnnotation for: anAnotationContext
 For simplicity you can specify any class as argument. It will represent any context of your application which is a kind of that class:
@@ -66,4 +73,5 @@ There are extra query methods to retrieve visible annotations:
     Instance Variables
 	annotatedClass:		<Class>
 	declarationSelector:		<Symbol>
+	priority:		<Number>
 	activeContext:		<AnnotationContext>
