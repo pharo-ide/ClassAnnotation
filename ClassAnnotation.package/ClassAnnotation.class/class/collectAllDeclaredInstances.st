@@ -7,7 +7,10 @@ collectAllDeclaredInstances
 	self declarationPragmaCollector do: [ :pragma |
 		annotations := self createAnnotationsForAllSubclassesFromPragma: pragma.
 		annotations do: [ :each | 
-			declaredInstances := result at: each class ifAbsentPut: [ Set new ].
-			declaredInstances add: each]].
+			declaredInstances := result at: each class ifAbsentPut: [ 
+				SortedCollection sortBlock: #priority descending ].
+			(declaredInstances includes: each) ifFalse: [ 
+				"This check avoids dublicated instances from overriden methods"
+				declaredInstances add: each]]].
 	
 	^result
