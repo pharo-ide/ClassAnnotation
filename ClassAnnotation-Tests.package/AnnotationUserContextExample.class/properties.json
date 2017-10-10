@@ -1,7 +1,7 @@
 {
 	"commentStamp" : "",
 	"super" : "BaseAnnotationUserContextExample",
-	"category" : "ClassAnnotation-Tests",
+	"category" : "ClassAnnotation-Tests-Examples-Annotation contexts",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
