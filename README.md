@@ -1,5 +1,5 @@
 # ClassAnnotation
-This package introduces clas annotations. They are first class objects and package defines how to attach them to classes.
+This package introduces class annotations. They are first class objects and package defines how to attach them to classes.
 
 To create a new annotation just create a subclass of ClassAnnotation:
 
