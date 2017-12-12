@@ -104,7 +104,7 @@ ClassAnnotation>>isActiveInContext: aContext
 ```
 Imaging that you want annotate commands with context menu information (where they should be accessible). In that case disabled menu items can represent commands which are visible for application but not active in given context (because selected items are not appropriate for them).
   
-To query visible annotations where are few methods:
+To query visible annotations there are few methods:
 ```Smalltalk
 ContextMenuAnnotation visibleInstancesInContext: anUserContext
 ContextMenuAnnotation visibleInstancesInContext: anUserContext do: aBlock
