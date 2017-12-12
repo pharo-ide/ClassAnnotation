@@ -1,0 +1,4 @@
+*ClassAnnotation
+implementsSimpleAnnotationContext: someUserContextClass
+
+	^self isKindOf: someUserContextClass
