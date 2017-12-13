@@ -1,7 +1,9 @@
-# ClassAnnotation
-This package introduces class annotations. They are first class objects and package defines how to attach them to classes.
+# Class Annotations
+This package introduces class annotations. They are first class objects. This package defines how to attach them to classes.
 
-To create a new annotation just create a subclass of ClassAnnotation:
+## Class annotation creation
+
+To create a new annotation just define a subclass of the class ClassAnnotation:
 
 ```Smalltalk
 ClassAnnotation subclass: #MySpecialAnnotation
@@ -9,28 +11,44 @@ ClassAnnotation subclass: #MySpecialAnnotation
 	classVariableNames: ''
 	package: 'MyPackage'
 ```
-Then add new class side method to the class which you want to annotate. It should return an instance of the annotation. In addition, the method returning the annotation instance should be marked with pragma #classAnnotation:
+
+Then add a new class side method to the class which you want to annotate. The class side method should return an instance of the annotation. Pay attention that the implementation may cache the returned value. In addition, the method returning the annotation instance should be marked with pragma #classAnnotation. 
+
+For example, the following method specialAnnotationExample defines that the class MyClass is annotated by the class annotation MySpecialAnnotation. 
 
 ```Smalltalk
-MyClass class>>specialAnnotationExample
+MyClass class >> specialAnnotationExample
 	<classAnnotation>
 	
-	^MySpecialAnnotation new
+	^ MySpecialAnnotation new
 ```
+
+Once classes are annotated, they can be queried. 
+
 
 ## Annotation queries
 There are two ways how to query annotations:
 
-1) You can ask concrete annotation class for all its registered instances:
+1) You can ask the concrete annotation class for all its registered instances:
 
+The following message will return the instance of the class MySpecialAnnotation attached to the class MyClass above. 
 ```Smalltalk
 MySpecialAnnotation registeredInstances
+```
+
+You can also restrict the query of annotations to a specific class. 
+```Smalltalk
 MySpecialAnnotation registeredInstancesAnnotating: MyClass
+```
+
+Finally you can iterate on all the registered annotation instances. 
+```Smalltalk
 MySpecialAnnotation registeredInstancesDo: [:each | each logCr].
 ```
 
 2) And you can ask a given class for all its attached annotations:
 
+Here we ask the annotated class itself for its annotations. 
 ```Smalltalk
 MyClass classAnnotations
 MyClass classAnnotationsDo: [:each | each logCr]
@@ -38,19 +56,28 @@ MyClass classAnnotationsDo: [:each | each logCr]
 
 Notice that each annotation includes the annotated class and the selector of declaration method. 
 
+```Smalltalk
+MyClass classAnnotationsDo: 
+	[:anAnnotation | 
+		'Class ', anAnnotation annotatedClass logCr.
+		'is annotated via' , anAnnotation selector logCr.
+		]
+```
+
+
 All annotations are cached in special registry. Therefore it is cheap to query them.
 
 ## Extending classes with meta information
-Because annotations are declared in methods, they offer the interesting feature to extend meta information by external packages.
+Because annotations are declared in methods, they offer the interesting feature to extend meta information by external packages. We can use package extension to extend a class with meta information from external packages.
 
 Just define declaration methods as class extensions, and when your package will be loaded the new annotations will be added to the existing class.
 
 ## Annotation instantiation
-There is no special way how to instantiate annotation instances. It is up to your domain.
+There is no special way how to instantiate annotation instances. It is up to your domain. An annotation is a plain object and can be stateful. You can add any domain specific variables to your annotations and add constructors to initialize them in declaration methods. We give an example here after:
 
 The base internal state of annotation is initialized during registry creation.  Users should not think about it. 
 
-You can add any domain specific variables to your annotations and add constructors to initialize them in declaration methods. We give an example here after:
+
 
 
 
@@ -60,7 +87,7 @@ Annotations are just normal classes without any restrictions. You can also attac
 # Forbidden annotation
 Annotation can forbid annotating of particular classes. For example it can forbid abstract classes.
 ```Smalltalk
-MySpecificAnnotation>>isForbidden
+MySpecificAnnotation >> isForbidden
       ^annotatedClass isAbstract
 ```
 Such annotations will not be added to the registry and forbidden classes will not include them.
