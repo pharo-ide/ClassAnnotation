@@ -109,7 +109,10 @@ Then you can query all shortcuts which should be active for concrete widget:
 ShortcutAnnotation activeAnnotationsInContext: aMyWidgetInstance
 ShortcutAnnotation activeAnnotationsInContext: aMyWidgetInstance do: aBlock
 ```
-Declaring context using classes is simplest case. Underhood class is converted to AnnotationContext instance using #asAnnotationContext message. Then during annotation query it simply asks #isKindOf: for given context instances.
+Context describes annotation users. And for contextual annotation lookup an instance of user should be provider. In that example it is aMyWidgetInstance.
+
+Declaring context using classes is simplest way how to restrict users which see annotation. By default given class is converted to SimpleAnnotationContext instance using #asAnnotationContext message. Then during annotation query it simply asks #isKindOf: for given user instance. 
+
 For advanced scenarios you can implement more complex annotation context and define specific DSL to use them for annotations and queries.
  
 Any annotation class can redefine meaning of active annotation with extra conditions. For example it can delegate decision to annotated class itself:
@@ -119,22 +122,22 @@ ShortcutAnnotation >>isActiveInContext: aMyWidgetInstance
         and: [annotatedClass canBeUsedInWidget: aMyWidgetInstance]
 ```
 
-But for some scenarios you may need to query annotations according to original "active" definition despite of extra conditions. For such cases the "visibility" of annotation is introduced: the annotation is visible if it is declared for given context:
+But for some scenarios you may need to query annotations according to original "active" definition despite of extra conditions. For such cases the "visibility" of annotation is introduced: the annotation is visible if it is declared for given user:
 ```Smalltalk
-ClassAnnotation>>isVisibleInContext: aContext
-	^activeContext describes: aContext
+ClassAnnotation>>isVisibleInContext: anAnnotationUser
+	^activeContext describes: anAnnotationUser
 ```
-So the visible annotation is not necessary active. But active annotation is always visible in given context:
+So the visible annotation is not necessary active. But active annotation is always visible for given user:
 ```Smalltalk
-ClassAnnotation>>isActiveInContext: aContext
-	^self isVisibleInContext: aContext
+ClassAnnotation>>isActiveInContext: anAnnotationUser
+	^self isVisibleInContext: anAnnotationUser
 ```
-Imaging that you want annotate commands with context menu information (where they should be accessible). In that case disabled menu items can represent commands which are visible for application but not active in given context (because selected items are not appropriate for them).
+Imaging that you want annotate commands with context menu information (where they should be executed). In that case disabled menu items can represent commands which are visible for application but not active for it (because selected item are not appropriate).
   
 To query visible annotations there are few methods:
 ```Smalltalk
-ContextMenuAnnotation visibleInstancesInContext: anUserContext
-ContextMenuAnnotation visibleInstancesInContext: anUserContext do: aBlock
+ContextMenuAnnotation visibleInstancesInContext: anAnnotationUser
+ContextMenuAnnotation visibleInstancesInContext: anAnnotationUser do: aBlock
 ```
 
 ## Annotation priority
