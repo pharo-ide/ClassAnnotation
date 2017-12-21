@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BaseAnnotationUserContextExample",
+	"name" : "BaseAnnotationUserExample",
 	"type" : "normal"
 }

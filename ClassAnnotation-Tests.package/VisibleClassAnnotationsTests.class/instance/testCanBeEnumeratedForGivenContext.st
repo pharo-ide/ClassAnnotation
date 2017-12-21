@@ -2,7 +2,7 @@ tests
 testCanBeEnumeratedForGivenContext
 
 	| context actual expected |
-	context := AnnotationUserContextExample new.
+	context := AnnotationUserExample new.
 	actual := OrderedCollection new.
 	ContextualClassAnnotationExample1 visibleInstancesInContext: context do: [:each | 
 		actual add: each].

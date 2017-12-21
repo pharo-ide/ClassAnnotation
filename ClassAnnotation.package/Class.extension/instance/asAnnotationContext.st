@@ -1,3 +1,3 @@
 *ClassAnnotation
 asAnnotationContext
-	^SimpleAnnotationContext userContextClass: self
+	^SimpleAnnotationContext of: self

@@ -2,7 +2,7 @@ tests
 testIncludeOnlyInstancesWhichAreActiveInGivenContext
 
 	| actual context expected |
-	context := AnnotationUserContextExample new.
+	context := AnnotationUserExample new.
 	context isSimulatedActiveAnnotation: true. 
 	
 	actual := ContextualClassAnnotationExample1 activeInstancesInContext: context.
