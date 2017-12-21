@@ -1,6 +1,6 @@
 queries-contextual
-activeInstancesInContext: aContext
-	"it will return all my registered instances which should be active in given context"
+activeInstancesInContext: anAnnotationUser
+	"it will return all my registered instances which should be active for given anAnnotationUser"
 	
 	^self registeredInstances 
-		select: [ :each | each isActiveInContext: aContext ]
+		select: [ :each | each isActiveInContext: anAnnotationUser ]

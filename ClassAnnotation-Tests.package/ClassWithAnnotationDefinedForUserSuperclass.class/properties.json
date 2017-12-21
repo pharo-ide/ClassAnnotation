@@ -1,11 +1,11 @@
 {
 	"commentStamp" : "",
 	"super" : "Object",
-	"category" : "ClassAnnotation-Tests-Examples-Annotation contexts",
+	"category" : "ClassAnnotation-Tests-Examples-Annotated classes",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "BaseAnnotationUserContextExample",
+	"name" : "ClassWithAnnotationDefinedForUserSuperclass",
 	"type" : "normal"
 }

@@ -6,4 +6,4 @@ comparing
 		ifTrue: [ ^ true ].
 	self class = anObject class
 		ifFalse: [ ^ false ].
-	^ userContextClass = anObject userContextClass
+	^ annotationUserClass = anObject annotationUserClass

@@ -4,5 +4,5 @@ printOn: aStream
 	
 	aStream 
 		nextPut: $(;
-		nextPutAll: userContextClass name;
+		nextPutAll: annotationUserClass name;
 		nextPut: $)

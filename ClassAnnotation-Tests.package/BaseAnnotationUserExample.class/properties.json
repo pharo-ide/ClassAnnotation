@@ -1,13 +1,11 @@
 {
 	"commentStamp" : "",
-	"super" : "BaseAnnotationUserContextExample",
+	"super" : "Object",
 	"category" : "ClassAnnotation-Tests-Examples-Annotation contexts",
 	"classinstvars" : [ ],
 	"pools" : [ ],
 	"classvars" : [ ],
-	"instvars" : [
-		"isSimulatedActiveAnnotation"
-	],
-	"name" : "AnnotationUserContextExample",
+	"instvars" : [ ],
+	"name" : "BaseAnnotationUserExample",
 	"type" : "normal"
 }

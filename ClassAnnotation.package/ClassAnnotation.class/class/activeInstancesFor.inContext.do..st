@@ -1,9 +1,9 @@
 queries-contextual
-activeInstancesFor: aClass inContext: aContext do: aBlock
-	"it will enumerate all my registered instances active in given aContext 
+activeInstancesFor: aClass inContext: anAnnotationUser do: aBlock
+	"it will enumerate all my registered instances active for given anAnnotationUser 
 	which are annotating given aClass"
 	
 	self registeredInstances 
 		select: [ :each | 
-			(each annotates: aClass) and: [each isActiveInContext: aContext] ]
+			(each annotates: aClass) and: [each isActiveInContext: anAnnotationUser] ]
 		thenDo: aBlock
