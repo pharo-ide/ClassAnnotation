@@ -1,4 +1,4 @@
 testing
-isActiveInContext: aContext
-	^(super isActiveInContext: aContext)
-		and: [ aContext isSimulatedActiveAnnotation ]
+isActiveInContext: anAnnotationUser
+	^(super isActiveInContext: anAnnotationUser)
+		and: [ anAnnotationUser isSimulatedActiveAnnotation ]

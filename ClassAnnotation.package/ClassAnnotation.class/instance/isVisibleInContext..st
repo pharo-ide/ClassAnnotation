@@ -1,5 +1,5 @@
 testing
-isVisibleInContext: aContext
-	"Annotation is only visible in context which is described by activeContext"
+isVisibleInContext: anAnnotationUser
+	"Annotation is only visible for users which are described by activeContext"
 	
-	^activeContext describes: aContext
+	^activeContext describes: anAnnotationUser

@@ -40,35 +40,37 @@ Just pass priority number into the annotation when you create it in declaration 
 
 Any annotation can be contextual. You can specify instance of context where annotation can be used:
 	MySpecialAnnotation for: anAnotationContext
-For simplicity you can specify any class as argument. It will represent any context of your application which is a kind of that class:
-	MySpecialAnnotation for: MyContext
+Context describes annotation users where they should be active.
+
+For simplicity you can specify any class instead of context instance. It will represent all users of annotation of particular class hierarchy:
+	MySpecialAnnotation for: MyUserClass
 Internallly argument is always converted to the context:
-	MyContext asAnnotationContext
-I provide query interface to retrieve registered annotations which are active in given context:
-	MySpecialAnnotation activeInstancesInContext: anUserContext
-	MySpecialAnnotation activeInstancesInContext: anUserContext do: [:ann | ]
-	MySpecialAnnotation activeInstancesFor: MyClass inContext: anUserContext do: [:ann | ]
-By default the annotation is active if given context is described by declared context:
-	ClassAnnotation>>isActiveInContext: aContext
-		^activeContext describes: aContext
+	MyUserClass asAnnotationContext
+I provide query interface to retriev registered annotations which are active in given context:
+	MySpecialAnnotation activeInstancesInContext: anAnnotationUser
+	MySpecialAnnotation activeInstancesInContext: anAnnotationUser do: [:ann | ]
+	MySpecialAnnotation activeInstancesFor: MyClass inContext: anAnnotationUser do: [:ann | ]
+By default the annotation is active if given user is described by declared context:
+	ClassAnnotation>>isActiveInContext: anAnnotationUser
+		^activeContext describes: anAnnotationUser
 Subclasses can provide extra conditions for active annotations. In that case they override this method:
-	MySpecialAnnotation>>isActiveInContext: aContext
-		^(super isActiveInContext: aContext)
-			and: [annotatingClass canBeUsedInContext: aContext]
-So the logic can depends on annotating class itself and actual context given from annotation user.
+	MySpecialAnnotation>>isActiveInContext: anAnnotationUser
+		^(super isActiveInContext: anAnnotationUser)
+			and: [annotatingClass canBeUsedInContext: anAnnotationUser]
+So the logic can depends on annotating class itself and actual annotation user.
 
 For some scenarios you may need to query annotations according to original "active" definition despite of extra conditions.
-For such cases I introduced  the "visibility" of annotations: the annotation is visible if it is declared for given context:
-	ClassAnnotation>>isVisibleInContext: aContext
-		^activeContext describes: aContext
-So the visible annotation is not necessary active. But active annotation is always visible in given context:
-	ClassAnnotation>>isActiveInContext: aContext
-		^self isVisibleInContext: aContext
+For such cases I introduced the "visibility" of annotations: the annotation is visible if it is declared for given user:
+	ClassAnnotation>>isVisibleInContext: anAnnotationUser
+		^activeContext describes: anAnnotationUser
+So the visible annotation is not necessary active. But active annotation is always visible for given user:
+	ClassAnnotation>>isActiveInContext: anAnnotationUser
+		^self isVisibleInContext: anAnnotationUser
 (I showed another version above to simplify description).
 There are extra query methods to retrieve visible annotations:
-	MySpecialAnnotation visibleInstancesInContext: anUserContext
-	MySpecialAnnotation visibleInstancesInContext: anUserContext do: [:ann | ]
-	MySpecialAnnotation visibleInstancesFor: MyClass inContext: anUserContext do: [:ann | ]
+	MySpecialAnnotation visibleInstancesInContext: anAnnotationUser
+	MySpecialAnnotation visibleInstancesInContext: anAnnotationUser do: [:ann | ]
+	MySpecialAnnotation visibleInstancesFor: MyClass inContext: anAnnotationUser do: [:ann | ]
 
     Instance Variables
 	annotatedClass:		<Class>

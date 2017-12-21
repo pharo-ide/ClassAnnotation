@@ -6,6 +6,6 @@
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [ ],
-	"name" : "ClassWithAnnotationsDefinedForContext",
+	"name" : "ClassWithAnnotationDefinedForUserSuperclass",
 	"type" : "normal"
 }

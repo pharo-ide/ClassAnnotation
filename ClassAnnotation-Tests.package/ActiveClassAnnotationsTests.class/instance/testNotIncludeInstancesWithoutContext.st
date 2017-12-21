@@ -1,8 +1,8 @@
 tests
 testNotIncludeInstancesWithoutContext
 
-	| annotations context |
-	context := AnnotationUserExample new.
-	annotations := ClassAnnotationExample1 activeInstancesInContext: context.
+	| annotations annotationUser |
+	annotationUser := AnnotationUserExample new.
+	annotations := ClassAnnotationExample1 activeInstancesInContext: annotationUser.
 	
 	self assert: annotations isEmpty

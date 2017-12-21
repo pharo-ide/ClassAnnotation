@@ -1,9 +1,9 @@
 tests
 testIncludeInstancesDeclaredForSuperclassOfGivenUser
 
-	| annotations context declaredContext |
-	context := AnnotationUserExample new.
-	annotations := ContextualClassAnnotationExample2 visibleInstancesInContext: context.
+	| annotations annotationUser declaredContext |
+	annotationUser := AnnotationUserExample new.
+	annotations := ContextualClassAnnotationExample2 visibleInstancesInContext: annotationUser.
 	
 	self assert: annotations size equals: 1.
 	declaredContext := annotations anyOne activeContext annotationUserClass.

@@ -1,6 +1,6 @@
 queries-contextual
-visibleInstancesInContext: aContext
-	"it will return all my registered instances which should be visible in given context"
+visibleInstancesInContext: anAnnotationUser
+	"it will return all my registered instances which should be visible for given anAnnotationUser"
 	
 	^self registeredInstances 
-		select: [ :each | each isVisibleInContext: aContext ]
+		select: [ :each | each isVisibleInContext: anAnnotationUser ]

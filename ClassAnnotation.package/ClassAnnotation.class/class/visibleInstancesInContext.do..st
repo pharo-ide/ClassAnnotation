@@ -1,7 +1,7 @@
 queries-contextual
-visibleInstancesInContext: aContext do: aBlock
-	"it will enumerate all my registered instances which should be visible in given context"
+visibleInstancesInContext: anAnnotationUser do: aBlock
+	"it will enumerate all my registered instances which should be visible for given anAnnotationUser"
 	
 	self registeredInstances 
-		select: [ :each | each isVisibleInContext: aContext ]
+		select: [ :each | each isVisibleInContext: anAnnotationUser ]
 		thenDo: aBlock
