@@ -1,4 +1,4 @@
-system subscription
+system changes
 ensureSystemSubscription
 
 	SystemAnnouncer uniqueInstance unsubscribe: self.

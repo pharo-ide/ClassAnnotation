@@ -4,10 +4,7 @@
 	"category" : "ClassAnnotation",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"DeclarationPragmaCollector",
-		"Registry"
-	],
+	"classvars" : [ ],
 	"instvars" : [
 		"annotatedClass",
 		"declarationSelector",

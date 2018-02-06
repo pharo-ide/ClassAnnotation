@@ -2,4 +2,4 @@ accessing
 resetIf: conditionBlock
 	default ifNil: [ ^self ].
 	
-	conditionBlock ifTrue: [ self reset ]
+	conditionBlock value ifTrue: [ self reset ]

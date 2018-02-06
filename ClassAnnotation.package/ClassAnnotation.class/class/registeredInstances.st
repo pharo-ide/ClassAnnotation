@@ -1,4 +1,4 @@
 queries-general
 registeredInstances
 
-	^self registry at: self ifAbsent: #()
+	^self registry allInstancesOf: self

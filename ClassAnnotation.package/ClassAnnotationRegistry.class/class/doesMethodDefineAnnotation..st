@@ -1,4 +1,4 @@
-system subscription
+system changes
 doesMethodDefineAnnotation: aMethod
 	"The second condition allows to mark methods 
 	which are sent inside annotation definition methods 
