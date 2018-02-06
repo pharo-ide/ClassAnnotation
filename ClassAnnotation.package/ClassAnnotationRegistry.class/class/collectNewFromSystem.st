@@ -1,4 +1,4 @@
 instance creation
-collectFromSystem
+collectNewFromSystem
 	^self new
 		addAllFromPragmas: self collectAnnotationPragmas

@@ -1,3 +1,5 @@
 accessing
 default
-	^default ifNil: [ default := self collectFromSystem ]
+	^default ifNil: [ 
+		self ensureSystemSubscription.
+		default := self collectNewFromSystem]

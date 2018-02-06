@@ -1,0 +1,4 @@
+pragma collecting
+annotationPragmaName
+
+	^#classAnnotation
