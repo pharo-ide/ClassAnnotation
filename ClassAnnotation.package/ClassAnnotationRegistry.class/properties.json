@@ -1,0 +1,16 @@
+{
+	"commentStamp" : "",
+	"super" : "Object",
+	"category" : "ClassAnnotation",
+	"classinstvars" : [
+		"default"
+	],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"annotations",
+		"annotatedClasses"
+	],
+	"name" : "ClassAnnotationRegistry",
+	"type" : "normal"
+}
