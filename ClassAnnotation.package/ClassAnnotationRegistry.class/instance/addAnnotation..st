@@ -7,5 +7,5 @@ addAnnotation: aClassAnnotation
 	container add: aClassAnnotation.
 
 	container := annotatedClasses 
-		at: aClassAnnotation annotatedClass ifAbsentPut: [ IdentitySet new].
+		at: aClassAnnotation annotatedClass ifAbsentPut: [ Set new].
 	container add: aClassAnnotation	

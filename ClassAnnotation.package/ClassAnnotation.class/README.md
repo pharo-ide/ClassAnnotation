@@ -88,7 +88,7 @@ For example in Commander package there is CmdShortcutCommandActivation annotatio
 		^CmdShortcutCommandActivation renamingFor: MyApp.
 
 This annotation will keep cmd+r in instance variable. 
-If you will modify #renamingFor: method with new shorctut the annotations should be updated. And for this this method has special pragma:
+If you will modify #renamingFor: method with new shorctut the annotations should be updated. And special pragma ensures this logic:
 
 	CmdShortcutCommandActivation class>> renamingFor: anAnnotationUser
 		<classAnnotationDependency>
