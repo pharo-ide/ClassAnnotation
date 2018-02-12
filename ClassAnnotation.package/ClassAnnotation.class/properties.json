@@ -1,13 +1,10 @@
 {
-	"commentStamp" : "DenisKudryashov 12/21/2017 17:14",
+	"commentStamp" : "DenisKudryashov 2/8/2018 16:51",
 	"super" : "Object",
 	"category" : "ClassAnnotation",
 	"classinstvars" : [ ],
 	"pools" : [ ],
-	"classvars" : [
-		"DeclarationPragmaCollector",
-		"Registry"
-	],
+	"classvars" : [ ],
 	"instvars" : [
 		"annotatedClass",
 		"declarationSelector",

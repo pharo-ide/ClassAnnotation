@@ -11,7 +11,7 @@ I provide a query API to retrieve all registered instances of a concrete annotat
 	MySpecialAnnotation registeredInstancesFor: MyClass
 	MySpecialAnnotation registeredInstancesDo: [:each | each logCr].
 Each annotation includes the annotated class and the selector of declaration method.
-All annotations are cached in my Registry class var. It is cheap to query them.
+All annotations are cached in default ClassAnnotationRegistry instance. It is cheap to query them.
 
 Classes itself can be queried for all attached annotations:
 	MyClass classAnnotations
@@ -72,6 +72,28 @@ There are extra query methods to retrieve visible annotations:
 	MySpecialAnnotation visibleInstancesInContext: anAnnotationUser do: [:ann | ]
 	MySpecialAnnotation visibleInstancesFor: MyClass inContext: anAnnotationUser do: [:ann | ]
 
+-----------Advanced features. Annotation dependency methods------------
+
+It is possible to call other methods inside annotation declaring methods (with pragma <classAnnotation>).
+Such methods are dependency methods and their modification requires updating annotation cache (registry).
+You can do it manually using
+
+	ClassAnnotation resetAll
+	
+Or you can mark such methods with special pragma <classAnnotationDependency> and systen will track this methods for automatically.	
+For example in Commander package there is CmdShortcutCommandActivation annotation. It provides reusable methods for rename and remove shorcuts: cmd+r and cmd+x. So you can annotate commands using: 
+
+	MyRenameCommand class>>shortcutActivation
+		<classAnnotation>
+		^CmdShortcutCommandActivation renamingFor: MyApp.
+
+This annotation will keep cmd+r in instance variable. 
+If you will modify #renamingFor: method with new shorctut the annotations should be updated. And special pragma ensures this logic:
+
+	CmdShortcutCommandActivation class>> renamingFor: anAnnotationUser
+		<classAnnotationDependency>
+		^self by: $r meta for: anAnnotationUser 
+  
     Instance Variables
 	annotatedClass:		<Class>
 	declarationSelector:		<Symbol>

@@ -1,4 +1,4 @@
 private
 registry
 
-	^Registry ifNil: [ Registry := self collectAllDeclaredInstances ]
+	^ClassAnnotationRegistry default
