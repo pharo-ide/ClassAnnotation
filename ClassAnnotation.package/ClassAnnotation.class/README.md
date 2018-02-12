@@ -80,7 +80,7 @@ You can do it manually using
 
 	ClassAnnotation resetAll
 	
-Or you can mark such methods with special pragma <classAnnotationDependency> and systen will track this methods for automatically.	
+Or you can mark such methods with special pragma <classAnnotationDependency> and systen will track these methods for automatically.	
 For example in Commander package there is CmdShortcutCommandActivation annotation. It provides reusable methods for rename and remove shorcuts: cmd+r and cmd+x. So you can annotate commands using: 
 
 	MyRenameCommand class>>shortcutActivation
