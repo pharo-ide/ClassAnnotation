@@ -168,12 +168,12 @@ The cache of class annotations is managed by default instance of ClassAnnotation
 There are several scenarios when update happens:
 
 - User adds, removes or modifies the method which defines class annotation
-    - the registry should update all inherited annotations of all subclasses of the class defining affected method
+    - the registry updates all inherited annotations of all subclasses of the class defining affected method
 - User creates subclass of annotated class
-    - the registry should collect all inherited annotations for new class
+    - the registry collects all inherited annotations for new class
 - User removes a class
 - User changes the superclass of annotated class
-    - the registry should update all inherited annotations of this class
+    - the registry updates all inherited annotations of this class
 - User adds, removes or modifies annotation dependency methods
 
 ### Annotation dependency methods
