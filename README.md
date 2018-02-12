@@ -77,10 +77,10 @@ There is no special way how to instantiate annotation instances. It is up to you
 
 The base internal state of annotation is initialized during registry creation.  Users should not think about it. 
 
-# Annotating Annotations
+## Annotating Annotations
 Annotations are just normal classes without any restrictions. You can also attach annotations to annotations like in other languages.
 
-# Forbidden annotation
+## Forbidden annotation
 Annotation can forbid annotating of particular classes. For example it can forbid abstract classes.
 ```Smalltalk
 MySpecificAnnotation >> isForbidden
@@ -203,7 +203,7 @@ In such cases developers should invalidate annotation cache manually. It should 
 ClassAnnotation resetAll
 ```
 
-# Installation
+## Installation
 ```Smalltalk
 Metacello new
   baseline: 'ClassAnnotation';
