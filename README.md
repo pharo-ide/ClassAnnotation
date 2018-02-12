@@ -65,7 +65,7 @@ MyClass classAnnotationsDo:
 ```
 
 
-All annotations are cached in special registry. Therefore it is cheap to query them.
+All annotations are cached in special registry (loot at ClassAnnotationRegistry). Therefore it is cheap to query them.
 
 ## Extending classes with meta information
 Because annotations are declared in methods, they offer the interesting feature to extend meta information by external packages. We can use package extension to extend a class with meta information from external packages.
@@ -76,10 +76,6 @@ Just define declaration methods as class extensions, and when your package will 
 There is no special way how to instantiate annotation instances. It is up to your domain. An annotation is a plain object and can be stateful. You can add any domain specific variables to your annotations and add constructors to initialize them in declaration methods. We give an example here after:
 
 The base internal state of annotation is initialized during registry creation.  Users should not think about it. 
-
-
-
-
 
 # Annotating Annotations
 Annotations are just normal classes without any restrictions. You can also attach annotations to annotations like in other languages.
@@ -165,6 +161,47 @@ For such cases you can override class side method #createContainerForRegistry:
 MySpecificAnnotation class>>createContainerForRegistry
      ^SortedCollection sortBlock: #priority ascending
 ``` 
+
+## Annotation registry
+The cache of class annotation is managed by default instance of ClassAnnotationRegistry. It subscribes on system changes and update cache automatically when changes affect class annotations.
+
+There are several scenarios when update happens:
+
+- User adds, removes or modifies the method which defines class annotation
+    - the registry should update all inherited annotations of all subclasses of the class defining affected method
+- User creates subclass of annotated class
+    - the registry should collect all inherited annotations for new class
+- User removes a class
+- User changes the superclass of annotated class
+    - the registry should update all inherited annotations of this class
+- User add, remove or modifies annotation dependency methods
+
+### Annotation dependency methods
+Methods defining annotations can call other methods which can affect the annotation state. Therefore the annotation registry should be updated when such dependency methods are modified. For this purpose they should be marked with pragma classAnnotationDependency.
+
+For example CmdShortcutCommandActivation annotation provides reusable methods for rename and remove shorcuts: cmd+r and cmd+x. You can annotate commands using them: 
+```Smalltalk
+MyRenameCommand class>>shortcutActivation
+   <classAnnotation>
+   ^CmdShortcutCommandActivation renamingFor: MyApp.
+```
+This annotation will be cached and will keep cmd+r in instance variable. 
+If you will modify #renamingFor: method with new shorctut the all shortcut annotations should be updated. Special pragma ensures this logic:
+```Smalltalk
+CmdShortcutCommandActivation class>> renamingFor: anAnnotationUser
+   <classAnnotationDependency>
+   ^self by: $r meta for: anAnnotationUser 
+```
+
+### Manual registry update
+There are cases which registry can not track to update annotations.
+
+For example nobody forbids to pass the value of class side variable to an annotation instance. Variable change in that case will not affect dependent annotations by default.
+
+In such cases developers should invalidate annotation cache manually. It should add following code in required places: 
+```Smalltalk
+ClassAnnotation resetAll
+```
 
 # Installation
 ```Smalltalk
