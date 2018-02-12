@@ -163,7 +163,7 @@ MySpecificAnnotation class>>createContainerForRegistry
 ``` 
 
 ## Annotation registry
-The cache of class annotation is managed by default instance of ClassAnnotationRegistry. It subscribes on system changes and update cache automatically when changes affect class annotations.
+The cache of class annotation is managed by default instance of ClassAnnotationRegistry. It is subscribed on system changes and it updates the cache automatically when changes affect class annotations.
 
 There are several scenarios when update happens:
 
@@ -174,7 +174,7 @@ There are several scenarios when update happens:
 - User removes a class
 - User changes the superclass of annotated class
     - the registry should update all inherited annotations of this class
-- User add, remove or modifies annotation dependency methods
+- User adds, removes or modifies annotation dependency methods
 
 ### Annotation dependency methods
 Methods defining annotations can call other methods which can affect the annotation state. Therefore the annotation registry should be updated when such dependency methods are modified. For this purpose they should be marked with pragma classAnnotationDependency.
@@ -196,7 +196,7 @@ CmdShortcutCommandActivation class>> renamingFor: anAnnotationUser
 ### Manual registry update
 There are cases which registry can not track to update annotations.
 
-For example nobody forbids to pass the value of class side variable to an annotation instance. Variable change in that case will not affect dependent annotations by default.
+For example nobody forbids to pass the value of class side variable to an annotation instance. Variable change in that case will not affect dependent annotations by default. And cached annotation instance will be not in synch with variable value.
 
 In such cases developers should invalidate annotation cache manually. It should add following code in required places: 
 ```Smalltalk
