@@ -6,9 +6,9 @@ testWhenAnnotationFailsCheckForForbiddenProperty
 	self assert: false description: 'should fail'  ] ifError: [ ].
 
 	annotations := ClassWithForbiddenAnnotationExample classAnnotations.	
-	self assert: annotations size equals: 1.
+	self assert: annotations size equals: 2. "one forbidden and one broken"
 	
-	ann := annotations anyOne.
+	ann := (annotations reject: #isForbidden) anyOne.
 	
 	self assert: ann class equals: BrokenClassAnnotation.
 	self assert: ann annotatedClass equals: ClassWithForbiddenAnnotationExample.

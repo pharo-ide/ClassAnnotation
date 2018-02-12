@@ -2,6 +2,6 @@ operations
 debug
 	"here we just reevaluate messages which could fail"
 	| ann |
-	ann := annotatedClass perform: declarationSelector.
+	ann := self freshInstance.
 	ann isForbidden.
 	^ann

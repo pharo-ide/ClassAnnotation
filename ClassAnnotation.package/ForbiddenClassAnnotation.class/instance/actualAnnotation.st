@@ -1,0 +1,3 @@
+accessing
+actualAnnotation
+	^self freshInstance
