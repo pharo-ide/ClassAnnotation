@@ -163,7 +163,7 @@ MySpecificAnnotation class>>createContainerForRegistry
 ``` 
 
 ## Annotation registry
-The cache of class annotation is managed by default instance of ClassAnnotationRegistry. It is subscribed on system changes and it updates the cache automatically when changes affect class annotations.
+The cache of class annotations is managed by default instance of ClassAnnotationRegistry. It is subscribed on system changes and it updates the cache automatically when changes affect class annotations.
 
 There are several scenarios when update happens:
 
