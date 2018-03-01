@@ -1,0 +1,4 @@
+redefining
+revertRedefinedInstance
+
+	self class revertRedefinedInstanceFor: self

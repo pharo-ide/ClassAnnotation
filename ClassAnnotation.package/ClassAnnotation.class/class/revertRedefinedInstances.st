@@ -1,5 +1,5 @@
 redefining
-resetRedefiningInstances
+revertRedefinedInstances
 	
 	redefinedInstances := nil.
 	self resetCache
