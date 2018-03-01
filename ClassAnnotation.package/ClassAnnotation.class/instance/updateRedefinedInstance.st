@@ -1,4 +1,4 @@
 redefining
 updateRedefinedInstance
 
-	^self class updateRedefinedInstance: self
+	self class updateRedefinedInstance: self

@@ -1,7 +1,8 @@
 redefining
 redefineInstance: aClassAnnotation by: aBlock
+	| redefined |
 	redefinedInstances ifNil: [ redefinedInstances := Dictionary new ].
 	
-	redefinedInstances removeKey: aClassAnnotation ifAbsent: [  ].
-	redefinedInstances at: aClassAnnotation put: aClassAnnotation copy.
+	redefined := redefinedInstances removeKey: aClassAnnotation ifAbsent: [ aClassAnnotation copy ].
+	redefinedInstances at: aClassAnnotation put: redefined.
 	aBlock value

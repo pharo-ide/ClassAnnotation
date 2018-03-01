@@ -4,7 +4,9 @@ testRedefiningInstanceTwice
 	annotation := ClassWithSingleAnnotation classAnnotations anyOne.
 	
 	annotation redefineBy: [ annotation priority: -1000 ].
+	self assert: annotation redefinedInstance priority equals: 0.
 	annotation redefineBy: [ annotation priority: -2000 ].
+	self assert: annotation redefinedInstance priority equals: 0.
 	
 	ClassAnnotation resetCache.
 	newAnnotation := ClassWithSingleAnnotation classAnnotations anyOne.
