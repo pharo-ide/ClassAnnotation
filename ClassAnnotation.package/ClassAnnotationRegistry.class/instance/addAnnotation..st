@@ -1,11 +1,13 @@
 accessing
 addAnnotation: aClassAnnotation
-	| container |
-	container := annotations at: aClassAnnotation class ifAbsentPut: [ 
+	| container actualAnnotation |
+	actualAnnotation := aClassAnnotation isRedefined 
+		ifTrue: [ aClassAnnotation redefiningInstance] ifFalse: [ aClassAnnotation].
+	container := annotations at: actualAnnotation class ifAbsentPut: [ 
 		aClassAnnotation class createContainerForRegistry ].
-	(container includes: aClassAnnotation) ifTrue: [ ^self ].
-	container add: aClassAnnotation.
+	(container includes: actualAnnotation) ifTrue: [ ^self ].
+	container add: actualAnnotation.
 
 	container := annotatedClasses 
-		at: aClassAnnotation annotatedClass ifAbsentPut: [ Set new].
-	container add: aClassAnnotation	
+		at: actualAnnotation annotatedClass ifAbsentPut: [ Set new].
+	container add: actualAnnotation	

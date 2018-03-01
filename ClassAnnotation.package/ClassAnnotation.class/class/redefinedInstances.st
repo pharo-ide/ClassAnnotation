@@ -1,0 +1,3 @@
+redefining
+redefinedInstances
+	^redefinedInstances ifNil: [ #() ]

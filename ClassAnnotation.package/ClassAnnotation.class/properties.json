@@ -2,7 +2,9 @@
 	"commentStamp" : "DenisKudryashov 2/12/2018 10:45",
 	"super" : "Object",
 	"category" : "ClassAnnotation",
-	"classinstvars" : [ ],
+	"classinstvars" : [
+		"redefinedInstances"
+	],
 	"pools" : [ ],
 	"classvars" : [ ],
 	"instvars" : [
