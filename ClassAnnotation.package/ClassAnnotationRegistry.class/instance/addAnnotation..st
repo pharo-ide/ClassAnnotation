@@ -1,8 +1,11 @@
 accessing
 addAnnotation: aClassAnnotation
 	| container actualAnnotation |
-	actualAnnotation := aClassAnnotation isRedefined 
-		ifTrue: [ aClassAnnotation redefiningInstance] ifFalse: [ aClassAnnotation].
+	actualAnnotation := aClassAnnotation.
+	actualAnnotation isRedefined ifTrue: [
+		actualAnnotation updateRedefinedInstance.
+		actualAnnotation := actualAnnotation redefiningInstance].
+	
 	container := annotations at: actualAnnotation class ifAbsentPut: [ 
 		aClassAnnotation class createContainerForRegistry ].
 	(container includes: actualAnnotation) ifTrue: [ ^self ].

@@ -1,4 +1,5 @@
 redefining
 revertRedefinedInstance
 
-	self class revertRedefinedInstanceFor: self
+	^self revertRedefinedInstanceIfAbsent: [
+		self error: 'Redefined annotation not exists anymore!']
