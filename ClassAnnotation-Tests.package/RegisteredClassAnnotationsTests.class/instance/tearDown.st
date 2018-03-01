@@ -1,6 +1,6 @@
 running
 tearDown
 		
-	ClassAnnotation resetAll.
+	ClassAnnotation resetCache.
 	
 	super tearDown.
