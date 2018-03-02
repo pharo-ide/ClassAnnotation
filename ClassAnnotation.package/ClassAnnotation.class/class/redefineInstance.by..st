@@ -5,4 +5,4 @@ redefineInstance: aClassAnnotation by: aBlock
 	
 	redefined := redefinedInstances removeKey: aClassAnnotation ifAbsent: [ aClassAnnotation copy ].
 	redefinedInstances at: aClassAnnotation put: redefined.
-	aBlock value
+	aBlock cull: aClassAnnotation
