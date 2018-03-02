@@ -1,4 +1,4 @@
 private
-resetAll
+resetCache
 	<script>
 	ClassAnnotationRegistry reset 

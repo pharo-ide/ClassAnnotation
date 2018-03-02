@@ -2,4 +2,4 @@ running
 setUp
 	super setUp.
 	
-	ClassAnnotation resetAll
+	ClassAnnotation resetCache
