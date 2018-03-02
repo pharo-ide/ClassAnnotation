@@ -1,7 +1,6 @@
 redefining
 redefinedInstanceFor: aClassAnnotation
-	"It returnes the annotation instance which redefines given default collected annotation"
-	
+	"It returnes the annotation instance which is redefined by given annotation"	
 	redefinedInstances ifNil: [ ^self error: 'Given annotation is not redefined!' ].
 	
 	^redefinedInstances 

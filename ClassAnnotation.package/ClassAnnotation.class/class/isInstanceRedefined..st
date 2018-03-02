@@ -1,4 +1,4 @@
-redefining
+testing
 isInstanceRedefined: aClassAnnotation
 
 	redefinedInstances ifNil: [ ^false ].

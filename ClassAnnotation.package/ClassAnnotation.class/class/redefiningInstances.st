@@ -1,5 +1,5 @@
 redefining
 redefiningInstances
-	^redefinedInstances 
-		ifNil: [ #() ]
-		ifNotNil: [ redefinedInstances keys ]
+	redefinedInstances ifNil: [ ^#() ].
+	
+	^self redefinedInstances keys
