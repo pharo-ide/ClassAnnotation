@@ -162,6 +162,62 @@ MySpecificAnnotation class>>createContainerForRegistry
      ^SortedCollection sortBlock: #priority ascending
 ``` 
 
+## Redefined annotations
+
+All annotations are collected from methods and cached in default ClassAnnotationRegistry instance. 
+
+There is special mechanizm to redefine these instances. When cache is updated all redefined annotations are restored.
+
+To redefine particular annotation use #redefineBy: message with block which will modify properties to original instance.
+For example following code allows to redefine shortcut of #browse command in Calypso: 
+```Smalltalk
+(ClySpawnFullBrowserCommand classAnnotationsAt: #browserShortcutActivation)
+	redefineBy: [:shortcut | shortcut keyCombination: $o meta ].
+```	
+Try evaluate it and press cmd+o on selected item in the browser. It will open new browser window.
+You can notice that old shortcut cmd+b is not working anymore.
+
+Try manualy reset annotation cache to see that redefined shortcut is still working:
+```Smalltalk
+ClassAnnotation resetCache.
+(ClySpawnFullBrowserCommand classAnnotationsAt: #browserShortcutActivation) inspect
+```	
+To inspect all redefined annotations ask annotation class: 
+```Smalltalk
+CmdShortcutCommandActivation redefinedInstances
+```	
+Redefined instances are stored in class side variable #redefinedInstances. 
+It is a dictionary which keys are new redefining annotations and values are original annotations collected from methods.
+Notice that key and value are equal objects because annotations define equality using annotated class and declaration selector.
+So dictionary items can be accessed using both objects.
+
+To check that annotation is redefined use #isRedefined message: 
+```Smalltalk
+(ClySpawnFullBrowserCommand classAnnotationsAt: #browserShortcutActivation)
+	isRedefined
+```
+You can ask what instance was redefined: 
+```Smalltalk
+(ClySpawnFullBrowserCommand classAnnotationsAt: #browserShortcutActivation)
+	redefinedInstance
+```		
+	
+To revert redefined annotation use #revertRedefinedInstance message: 
+```Smalltalk
+(ClySpawnFullBrowserCommand classAnnotationsAt: #browserShortcutActivation)
+	revertRedefinedInstance
+```
+This script will revert back old browse shortcut cmd+b (which is defined in annotation declaration method).
+
+You can also revert all redefined annotations:
+```Smalltalk
+CmdShortcutCommandActivation revertRedefinedInstances
+```
+Redefining logic is very suitable mehanizm to override system behavior which depends on annotations without changing the code.
+
+It can be used to manage particular kind of annotation in settings browser. 
+For example shortcut annotations based on Commander are available in setting browser. Users can explore and edit all shortcuts in the system. All these settings are persistable.
+
 ## Annotation registry
 The cache of class annotations is managed by default instance of ClassAnnotationRegistry. It is subscribed on system changes and it updates the cache automatically when changes affect class annotations.
 
@@ -200,7 +256,7 @@ For example nobody forbids to pass the value of class side variable to an annota
 
 In such cases developers should invalidate annotation cache manually. It should add following code in required places: 
 ```Smalltalk
-ClassAnnotation resetAll
+ClassAnnotation resetCache
 ```
 
 ## Installation
