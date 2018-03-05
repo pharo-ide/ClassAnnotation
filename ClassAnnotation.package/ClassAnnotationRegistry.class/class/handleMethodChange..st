@@ -1,4 +1,4 @@
 system changes
-handleMethodChange: aMethodAdded
+handleMethodChange: aMethodAnnouncement
 	
-	self resetIf: [ self doesMethodAffectAnnotations: aMethodAdded methodAffected]
+	self resetIf: [ self doesMethodAffectAnnotations: aMethodAnnouncement methodAffected]
