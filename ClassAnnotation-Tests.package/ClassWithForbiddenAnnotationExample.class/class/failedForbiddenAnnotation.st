@@ -1,5 +1,0 @@
-annotations
-failedForbiddenAnnotation
-	<classAnnotation>
-	
-	^ClassAnnotationExampleWithFailedForbiddenCheck new
