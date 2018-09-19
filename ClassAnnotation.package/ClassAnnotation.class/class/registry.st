@@ -1,4 +1,0 @@
-private
-registry
-
-	^ClassAnnotationRegistry default

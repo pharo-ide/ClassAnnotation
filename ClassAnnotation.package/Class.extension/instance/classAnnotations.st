@@ -1,3 +1,0 @@
-*ClassAnnotation
-classAnnotations
-	^ClassAnnotation findAllAnnotationsFor: self

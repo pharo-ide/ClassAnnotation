@@ -1,4 +1,0 @@
-testing
-describes: anAnnotationUser
-
-	^false
