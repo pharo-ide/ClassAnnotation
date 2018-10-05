@@ -1,5 +1,6 @@
 # Class Annotations
-This package introduces class annotations. They are first class objects. This package defines how to attach them to classes.
+This package introduces class annotations. Class annotations are first class objects and that attached to classes. 
+Basically a class annation is a subclass of ClassAnnotation and a class to use it should use the <classAnnotation> on a class side method. 
 
 ## Class annotation creation
 
